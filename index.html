@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio BTS SIO SISR — Chahé Papazian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f4f1e9;
+    --card:#fffdf9;
+    --ink:#1f1e1b;
+    --ink-soft:#4c4a44;
+    --muted:#86827a;
+    --line:#e4ddcc;
+    --line-soft:#efe9da;
+    --accent:#1f4d68;
+    --accent-deep:#16384c;
+    --accent-soft:#e9f0f3;
+    --gold:#a9762f;
+    --radius:10px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Public Sans',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    font-size:17px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:500;line-height:1.2;letter-spacing:-0.01em;}
+
+  a{color:var(--accent);}
+
+  ::selection{background:var(--accent);color:#fff;}
+
+  .wrap{max-width:1000px;margin:0 auto;padding:0 28px;}
+
+  /* ───── NAV ───── */
+  nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(244,241,233,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1000px;margin:0 auto;padding:14px 28px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:19px;}
+  .logo span{color:var(--accent);}
+  .nav-links{display:flex;gap:26px;list-style:none;}
+  .nav-links a{
+    color:var(--ink-soft);text-decoration:none;font-size:14.5px;
+    font-weight:500;padding-bottom:2px;border-bottom:1.5px solid transparent;
+    transition:border-color .15s,color .15s;
+  }
+  .nav-links a:hover{color:var(--accent);border-color:var(--accent);}
+  @media(max-width:760px){.nav-links{display:none;}}
+
+  /* ───── SECTIONS ───── */
+  section{padding:74px 0;border-top:1px solid var(--line-soft);}
+  section:first-of-type{border-top:none;}
+
+  .sec-head{margin-bottom:38px;max-width:680px;}
+  .sec-num{
+    font-family:'Public Sans';font-size:13px;font-weight:700;letter-spacing:.12em;
+    color:var(--accent);text-transform:uppercase;
+  }
+  .sec-head h2{font-size:33px;margin:6px 0 12px;}
+  .sec-sub{color:var(--ink-soft);font-size:16px;}
+
+  /* ───── HERO ───── */
+  .hero{padding:64px 0 70px;}
+  .hero-tag{
+    display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--accent);
+    background:var(--accent-soft);padding:6px 12px;border-radius:50px;
+  }
+  .hero h1{font-size:47px;margin:20px 0 18px;max-width:780px;}
+  .hero h1 em{font-style:normal;color:var(--accent);}
+  .hero-sub{font-size:18px;color:var(--ink-soft);max-width:660px;}
+  .hero-meta{
+    margin-top:34px;display:grid;grid-template-columns:repeat(4,1fr);
+    gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  }
+  .meta-item{background:var(--card);padding:16px 18px;}
+  .meta-label{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);}
+  .meta-value{display:block;font-family:'Fraunces',serif;font-size:18px;margin-top:3px;}
+  @media(max-width:680px){.hero-meta{grid-template-columns:repeat(2,1fr);}.hero h1{font-size:34px;}}
+
+  /* ───── ABOUT ───── */
+  .about-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:40px;}
+  .about-text p{margin-bottom:15px;color:var(--ink-soft);}
+  .about-text strong{color:var(--ink);font-weight:600;}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start;}
+  .stat{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px;
+  }
+  .stat-num{font-family:'Fraunces',serif;font-size:30px;color:var(--accent);}
+  .stat-label{font-size:13px;color:var(--muted);margin-top:2px;line-height:1.45;}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;}}
+
+  /* ───── CARDS GENERIC ───── */
+  .blocs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .bloc{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;display:flex;flex-direction:column;
+  }
+  .tag-mini{
+    font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);
+  }
+  .bloc h3{font-size:19px;margin:8px 0 14px;}
+  .bloc ul{list-style:none;}
+  .bloc li{
+    font-size:14.5px;color:var(--ink-soft);padding:7px 0 7px 18px;
+    border-top:1px solid var(--line-soft);position:relative;
+  }
+  .bloc li:first-child{border-top:none;}
+  .bloc li::before{
+    content:'';position:absolute;left:0;top:14px;
+    width:6px;height:6px;background:var(--accent);border-radius:50%;
+  }
+  @media(max-width:760px){.blocs{grid-template-columns:1fr;}}
+
+  /* ───── REALISATIONS ───── */
+  .tabs{display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap;}
+  .tab{
+    font-family:'Public Sans';font-size:14px;font-weight:600;
+    padding:9px 16px;border:1px solid var(--line);background:var(--card);
+    border-radius:50px;color:var(--ink-soft);cursor:pointer;transition:.15s;
+  }
+  .tab:hover{border-color:var(--accent);}
+  .tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+  .real-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .real{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;
+  }
+  .real h4{font-size:17.5px;margin-bottom:6px;}
+  .real>p{font-size:14.5px;color:var(--ink-soft);margin-bottom:12px;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+  .chip{
+    font-size:11.5px;font-weight:600;color:var(--accent);
+    background:var(--accent-soft);padding:3px 9px;border-radius:5px;
+  }
+  .skills-label{
+    font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:6px;
+  }
+  .real ul{list-style:none;}
+  .real ul li{
+    font-size:13.5px;color:var(--ink-soft);padding-left:16px;position:relative;margin-bottom:4px;
+  }
+  .real ul li::before{content:'›';position:absolute;left:0;color:var(--accent);font-weight:700;}
+  @media(max-width:680px){.real-grid{grid-template-columns:1fr;}}
+
+  /* ───── PROJETS ───── */
+  .projet{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px;margin-bottom:20px;
+  }
+  .projet-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:18px;}
+  .projet-head h3{font-size:23px;}
+  .projet-kicker{font-size:12.5px;color:var(--muted);font-weight:600;margin-top:4px;}
+  .projet-block{margin-top:18px;}
+  .projet-block .lbl{
+    font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:6px;
+  }
+  .projet-block p,.projet-block li{color:var(--ink-soft);font-size:15px;}
+  .projet-block ul{margin-left:18px;}
+  .projet-block li{margin-bottom:3px;}
+  .stack{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line-soft);}
+  .stack .chip{background:transparent;border:1px solid var(--line);color:var(--ink-soft);}
+
+  /* ───── VEILLE ───── */
+  .veille-sub{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;margin-bottom:18px;
+  }
+  .veille-sub.flag{border-left:3px solid var(--accent);}
+  .veille-sub h3{font-size:21px;margin:6px 0 12px;}
+  .veille-sub p{color:var(--ink-soft);font-size:15.5px;margin-bottom:12px;}
+  .veille-sub strong{color:var(--ink);font-weight:600;}
+  .veille-cols{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;}
+  .panel h4{font-size:17px;margin-bottom:12px;}
+  .panel ol{margin-left:18px;}
+  .panel ol li{font-size:14.5px;color:var(--ink-soft);margin-bottom:5px;}
+  .src{list-style:none;}
+  .src li{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:14px;padding:8px 0;border-top:1px solid var(--line-soft);
+  }
+  .src li:first-child{border-top:none;}
+  .src-type{font-size:10.5px;font-weight:700;letter-spacing:.07em;color:var(--gold);}
+  .competence-note{
+    margin-top:14px;font-size:13.5px;color:var(--muted);
+    padding-top:12px;border-top:1px solid var(--line-soft);
+  }
+  @media(max-width:760px){.veille-cols{grid-template-columns:1fr;}}
+
+  /* ───── EPREUVES ───── */
+  .epreuves{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .epreuve{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;
+  }
+  .epreuve-code{
+    font-family:'Public Sans';font-size:12.5px;font-weight:700;letter-spacing:.06em;
+    color:var(--accent);
+  }
+  .epreuve h4{font-size:17px;margin:6px 0 12px;}
+  .epreuve-info{font-size:13.5px;color:var(--ink-soft);margin-bottom:5px;}
+  .epreuve-info strong{color:var(--ink);}
+  .coef{
+    display:inline-block;margin-top:10px;font-size:12px;font-weight:700;
+    background:var(--accent-soft);color:var(--accent);padding:4px 10px;border-radius:5px;
+  }
+  @media(max-width:760px){.epreuves{grid-template-columns:1fr;}}
+
+  /* ───── PDF EMBED ───── */
+  .pdf-wrap{
+    margin-top:34px;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);overflow:hidden;
+  }
+  .pdf-head{padding:24px 26px;border-bottom:1px solid var(--line-soft);}
+  .pdf-head .tag-mini{color:var(--accent);}
+  .pdf-head h3{font-size:21px;margin:6px 0 6px;}
+  .pdf-head p{font-size:14.5px;color:var(--ink-soft);}
+  .pdf-frame{background:#525659;}
+  .pdf-frame iframe,.pdf-frame object{
+    display:block;width:100%;height:780px;border:0;
+  }
+  .pdf-foot{
+    padding:14px 26px;font-size:13.5px;color:var(--muted);
+    display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  }
+  .btn-open{
+    font-family:'Public Sans';font-size:13.5px;font-weight:600;text-decoration:none;
+    color:#fff;background:var(--accent);padding:9px 16px;border-radius:7px;
+    transition:background .15s;
+  }
+  .btn-open:hover{background:var(--accent-deep);}
+  @media(max-width:680px){.pdf-frame iframe,.pdf-frame object{height:560px;}}
+
+  /* ───── FOOTER ───── */
+  footer{
+    border-top:1px solid var(--line);padding:34px 0;
+    text-align:center;color:var(--muted);font-size:13.5px;
+  }
+
+  /* ───── REVEAL ───── */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ═══ VEILLE — visuels enrichis ═══ */
+  .ebpf-fig{margin:18px 0 6px;background:#0d1620;border:1px solid #1c2a38;border-radius:var(--radius);padding:20px;}
+  .ebpf-fig svg{display:block;width:100%;height:auto;}
+  .fig-cap{font-size:12.5px;color:var(--muted);text-align:center;margin-top:10px;}
+  .mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0 4px;}
+  .mini{background:var(--accent-soft);border-radius:8px;padding:11px 14px;}
+  .mini b{display:block;font-size:13.5px;color:var(--accent);}
+  .mini span{font-size:12.5px;color:var(--ink-soft);}
+
+  .whoop-show{background:linear-gradient(155deg,#0f1813,#0b1310);border-radius:var(--radius);
+    padding:28px;margin:18px 0;display:grid;grid-template-columns:1fr 1.05fr;gap:26px;align-items:center;}
+  .whoop-show .lbl-w{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5fd39a;font-weight:700;}
+  .whoop-show h4{font-size:19px;color:#fff;margin:6px 0 9px;font-family:'Fraunces',serif;}
+  .whoop-show p{font-size:13.5px;color:#9fb0a4;margin:0;}
+  .whoop-show svg{width:100%;height:auto;display:block;}
+  .wave-box{margin-top:14px;background:#070d0a;border-radius:8px;padding:10px 8px;overflow:hidden;}
+
+  .gauges{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0;}
+  .gauge{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 16px;text-align:center;}
+  .gauge .ring-wrap{position:relative;width:128px;height:128px;margin:0 auto;}
+  .gauge svg{width:128px;height:128px;}
+  .gauge-ring{transition:stroke-dashoffset 1.5s cubic-bezier(.2,.7,.2,1);}
+  .gauge-val{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:27px;color:var(--ink);}
+  .gauge-name{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--muted);margin-top:10px;}
+  .gauge-desc{font-size:12.5px;color:var(--ink-soft);margin-top:4px;line-height:1.45;}
+
+  .chain{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;margin:18px 0;}
+  .chain h4{font-size:16px;margin-bottom:2px;}
+  .chain svg{width:100%;height:auto;display:block;margin-top:6px;}
+
+  .wdetails{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0 4px;}
+  .wd{font-size:13px;color:var(--ink-soft);background:var(--accent-soft);border-radius:8px;padding:11px 13px;}
+  .wd b{color:var(--accent);}
+  @media(max-width:680px){
+    .whoop-show{grid-template-columns:1fr;}
+    .gauges{grid-template-columns:1fr;}
+    .mini-grid,.wdetails{grid-template-columns:1fr;}
+  }
+
+  /* photo produit WHOOP */
+  .whoop-photo{display:grid;grid-template-columns:1.05fr 1fr;margin:18px 0;
+    border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card);}
+  .whoop-photo img{width:100%;height:100%;min-height:250px;object-fit:cover;display:block;background:#0c1410;}
+  .whoop-photo-info{padding:24px;}
+  .whoop-photo-info .lblp{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  .whoop-photo-info h4{font-size:18px;margin:6px 0 12px;font-family:'Fraunces',serif;}
+  .whoop-photo-info ul{list-style:none;}
+  .whoop-photo-info li{font-size:13.5px;color:var(--ink-soft);padding:7px 0 7px 18px;
+    position:relative;border-top:1px solid var(--line-soft);}
+  .whoop-photo-info li:first-child{border-top:none;}
+  .whoop-photo-info li::before{content:'';position:absolute;left:0;top:14px;width:6px;height:6px;
+    border-radius:50%;background:var(--accent);}
+  .photo-ph{display:none;flex-direction:column;align-items:center;justify-content:center;
+    background:#0c1410;color:#7f8c83;padding:28px;text-align:center;
+    font-size:13px;line-height:1.55;min-height:250px;}
+  @media(max-width:680px){.whoop-photo{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Chahé&nbsp;Papazian<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#realisations">Réalisations</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#veille">Veille</a></li>
+      <li><a href="#epreuves">Épreuves</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ───── HERO ───── -->
+<header class="hero">
+  <div class="wrap">
+    <span class="hero-tag">BTS SIO · Option SISR · Session 2026</span>
+    <h1>Chahé Papazian — <em>administrateur systèmes &amp; réseaux</em> en formation.</h1>
+    <p class="hero-sub">
+      Portfolio professionnel de mes deux années de BTS Services Informatiques aux Organisations,
+      option Solutions d'Infrastructure, Systèmes et Réseaux. Virtualisation, sécurité,
+      supervision et support utilisateur.
+    </p>
+    <div class="hero-meta">
+      <div class="meta-item"><span class="meta-label">Promotion</span><span class="meta-value">2024 — 2026</span></div>
+      <div class="meta-item"><span class="meta-label">Spécialité</span><span class="meta-value">SISR</span></div>
+      <div class="meta-item"><span class="meta-label">Statut</span><span class="meta-value">Alternance / stage</span></div>
+      <div class="meta-item"><span class="meta-label">Disponibilité</span><span class="meta-value">Juillet 2026</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ───── À PROPOS ───── -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">01 — À propos</span>
+      <h2>Un parcours tourné vers l'infrastructure et la sécurité.</h2>
+      <p class="sec-sub">Étudiant motivé par les systèmes et la cybersécurité, je consolide en formation et en entreprise les compétences d'un futur technicien systèmes et réseaux.</p>
+    </div>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>Inscrit en deuxième année de <strong>BTS SIO option SISR</strong>, je construis depuis deux ans un parcours tourné vers l'administration des systèmes, la mise en place de services réseau et la sécurité informatique. Ma formation alterne projets en laboratoire (virtualisation, Active Directory, pfSense, Cisco Packet Tracer) et missions concrètes en entreprise (gestion d'un parc, support N1/N2, suivi du SMSI).</p>
+        <p>En entreprise, j'évolue dans un environnement où la <strong>sécurité du système d'information</strong> est centrale : suivi du <em>run</em> SMSI via Sillage, revues de comptes Microsoft 365, Keeper et Trustelem, analyse critique de PV de revue. Ces missions m'ont confronté aux exigences de traçabilité et de rigueur propres à la production.</p>
+        <p>Mon objectif après le BTS : poursuivre en <strong>licence ou bachelor cybersécurité / administration des infrastructures</strong>, tout en continuant à pratiquer sur le terrain. Ce portfolio rassemble mes compétences, mes réalisations et les preuves associées.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="stat-num">6</div><div class="stat-label">Blocs de compétences couverts</div></div>
+        <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Réalisations documentées</div></div>
+        <div class="stat"><div class="stat-num">2 ans</div><div class="stat-label">D'expérience en alternance</div></div>
+        <div class="stat"><div class="stat-num">SISR</div><div class="stat-label">Infrastructure &amp; sécurité</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── COMPÉTENCES ───── -->
+<section id="competences">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">02 — Compétences</span>
+      <h2>Les blocs du référentiel BTS SIO.</h2>
+      <p class="sec-sub">Trois blocs communs et trois liés à l'option SISR. Le tableau de synthèse complet est consultable en bas de page.</p>
+    </div>
+    <div class="blocs reveal">
+      <div class="bloc">
+        <span class="tag-mini">Bloc 01 · Commun</span>
+        <h3>Support et mise à disposition de services informatiques</h3>
+        <ul>
+          <li>Gérer le patrimoine informatique</li>
+          <li>Répondre aux incidents et demandes d'assistance et d'évolution</li>
+          <li>Développer la présence en ligne de l'organisation</li>
+          <li>Travailler en mode projet</li>
+          <li>Mettre à disposition un service informatique</li>
+          <li>Organiser son développement professionnel</li>
+        </ul>
+      </div>
+      <div class="bloc">
+        <span class="tag-mini">Bloc 02 · SISR</span>
+        <h3>Administration des systèmes et des réseaux</h3>
+        <ul>
+          <li>Concevoir une solution d'infrastructure réseau</li>
+          <li>Installer, tester et déployer une solution d'infrastructure réseau</li>
+          <li>Exploiter, dépanner et superviser une solution d'infrastructure réseau</li>
+        </ul>
+      </div>
+      <div class="bloc">
+        <span class="tag-mini">Bloc 03 · Commun</span>
+        <h3>Cybersécurité des services informatiques</h3>
+        <ul>
+          <li>Protéger les données à caractère personnel</li>
+          <li>Préserver l'identité numérique de l'organisation</li>
+          <li>Sécuriser les équipements et les usages</li>
+          <li>Garantir disponibilité, intégrité et confidentialité</li>
+          <li>Assurer la cybersécurité d'une infrastructure réseau</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── RÉALISATIONS ───── -->
+<section id="realisations">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">03 — Réalisations</span>
+      <h2>Réalisations professionnelles.</h2>
+      <p class="sec-sub">Classées par origine : formation, première et seconde année en entreprise. Chaque mission alimente le tableau de synthèse du BTS.</p>
+    </div>
+
+    <div class="tabs reveal">
+      <button class="tab active" data-tab="formation">En formation</button>
+      <button class="tab" data-tab="pro1">Entreprise — 1ʳᵉ année</button>
+      <button class="tab" data-tab="pro2">Entreprise — 2ᵉ année</button>
+    </div>
+
+    <!-- Formation -->
+    <div class="tab-panel active reveal" id="formation">
+      <div class="real-grid">
+        <div class="real">
+          <h4>Machines virtuelles VMware</h4>
+          <p>Mise en place d'environnements VMware pour tester services et configurations isolées.</p>
+          <div class="chips"><span class="chip">VMware</span><span class="chip">Linux</span><span class="chip">Windows Server</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Concevoir une solution d'infrastructure virtualisée</li>
+            <li>Installer et paramétrer un hyperviseur de type 2</li>
+            <li>Recenser les ressources numériques du patrimoine</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Serveur web Apache</h4>
+          <p>Installation, configuration de virtual hosts et déploiement d'un site en PHP/MySQL.</p>
+          <div class="chips"><span class="chip">Apache</span><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">HTML</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Installer et déployer un service web</li>
+            <li>Configurer un serveur HTTP et ses virtual hosts</li>
+            <li>Mettre à disposition un service aux utilisateurs</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Pare-feu pfSense</h4>
+          <p>Installation et configuration d'un pare-feu pfSense avec règles, NAT et VLAN.</p>
+          <div class="chips"><span class="chip">pfSense</span><span class="chip">Firewall</span><span class="chip">Sécurité</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Sécuriser les équipements et les usages</li>
+            <li>Mettre en œuvre des règles de filtrage et de NAT</li>
+            <li>Assurer la cybersécurité d'une infrastructure réseau</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Maquettes Cisco Packet Tracer</h4>
+          <p>Conception, simulation et test de réseaux d'entreprise complets (routage, VLAN, ACL).</p>
+          <div class="chips"><span class="chip">Cisco</span><span class="chip">Packet Tracer</span><span class="chip">Routage</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Concevoir une solution d'infrastructure réseau</li>
+            <li>Réaliser les tests d'intégration d'un service réseau</li>
+            <li>Configurer routage, VLAN et ACL sur équipements Cisco</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Parc informatique GLPI</h4>
+          <p>Création et alimentation d'un inventaire de parc avec tickets, contrats et inventaires.</p>
+          <div class="chips"><span class="chip">GLPI</span><span class="chip">Inventaire</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Recenser et identifier les ressources numériques</li>
+            <li>Collecter, suivre et orienter des demandes</li>
+            <li>Exploiter un outil de gestion de parc et de tickets</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Double authentification (2FA) sur VM</h4>
+          <p>Mise en place d'une authentification à deux facteurs sur un service hébergé en VM.</p>
+          <div class="chips"><span class="chip">2FA</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Mettre en place et vérifier les niveaux d'habilitation</li>
+            <li>Renforcer l'authentification d'un service</li>
+            <li>Garantir la confidentialité d'un service</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Sécurisation d'une infrastructure</h4>
+          <p>Durcissement complet : politique de mots de passe, mises à jour, segmentation, journalisation.</p>
+          <div class="chips"><span class="chip">Sécurité</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Assurer la cybersécurité d'une infrastructure réseau</li>
+            <li>Garantir disponibilité, intégrité et confidentialité</li>
+            <li>Appliquer des bonnes pratiques de durcissement</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Réseau d'entreprise (Cisco)</h4>
+          <p>Conception d'un réseau multi-sites avec routage inter-VLAN, ACL et services de base.</p>
+          <div class="chips"><span class="chip">Cisco</span><span class="chip">VLAN</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Concevoir et installer une solution d'infrastructure réseau</li>
+            <li>Segmenter un réseau et filtrer les flux</li>
+            <li>Documenter une architecture réseau d'entreprise</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Active Directory</h4>
+          <p>Installation d'un domaine, création d'OU, GPO, utilisateurs, groupes et délégations.</p>
+          <div class="chips"><span class="chip">AD</span><span class="chip">Windows Server</span><span class="chip">GPO</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Mettre en place et vérifier les niveaux d'habilitation</li>
+            <li>Centraliser la gestion des utilisateurs et des droits</li>
+            <li>Appliquer des stratégies de groupe pour sécuriser les postes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pro 1 -->
+    <div class="tab-panel reveal" id="pro1">
+      <div class="real-grid">
+        <div class="real">
+          <h4>Gestion et traitement des tickets</h4>
+          <p>Prise en charge des demandes utilisateurs, qualification, résolution N1/N2 et escalade.</p>
+          <div class="chips"><span class="chip">Support</span><span class="chip">Freshservice</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Collecter, suivre et orienter des demandes</li>
+            <li>Traiter les demandes services réseau, système et applicatifs</li>
+            <li>Communiquer efficacement avec un utilisateur final</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Création de comptes utilisateurs</h4>
+          <p>Provisionnement de comptes sur Freshservice et applicatifs métier, attribution des droits.</p>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Mettre en place et vérifier les niveaux d'habilitation</li>
+            <li>Gérer le cycle de vie d'un compte utilisateur</li>
+            <li>Mettre à disposition un service aux utilisateurs</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Analyse de logs sur VM</h4>
+          <p>Lecture et corrélation de logs systèmes/applicatifs pour diagnostiquer incidents et anomalies.</p>
+          <div class="chips"><span class="chip">Logs</span><span class="chip">Diagnostic</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Exploiter et dépanner une solution d'infrastructure</li>
+            <li>Identifier l'origine d'un incident à partir de traces</li>
+            <li>Vérifier les conditions de continuité d'un service</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Préparation des OS des postes</h4>
+          <p>Masterisation, configuration initiale, jointure au domaine et déploiement chez l'utilisateur.</p>
+          <div class="chips"><span class="chip">Déploiement</span><span class="chip">Windows</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Déployer un poste / un service utilisateur</li>
+            <li>Accompagner les utilisateurs dans la mise en place d'un service</li>
+            <li>Intégrer un poste au patrimoine informatique</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Rédaction de procédures</h4>
+          <p>Documentation pas-à-pas : connexion imprimante, installation logiciels, prise en main d'outils.</p>
+          <div class="chips"><span class="chip">Documentation</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Produire une documentation technique claire et réutilisable</li>
+            <li>Accompagner les utilisateurs sur les gestes courants</li>
+            <li>Capitaliser la connaissance pour l'équipe support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pro 2 -->
+    <div class="tab-panel reveal" id="pro2">
+      <div class="real-grid">
+        <div class="real">
+          <h4>Utilisateur Active Directory</h4>
+          <p>Création / modification de comptes, groupes et appartenances, application de bonnes pratiques.</p>
+          <div class="chips"><span class="chip">AD</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Mettre en place et vérifier les niveaux d'habilitation</li>
+            <li>Gérer l'identité numérique au sein de l'organisation</li>
+            <li>Appliquer le principe du moindre privilège</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Octroi d'accès Keeper</h4>
+          <p>Attribution sécurisée d'accès à des coffres de secrets selon les rôles et le moindre privilège.</p>
+          <div class="chips"><span class="chip">Keeper</span><span class="chip">PAM</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Protéger les données sensibles (secrets, mots de passe)</li>
+            <li>Mettre en place et vérifier les habilitations sur un outil PAM</li>
+            <li>Garantir la confidentialité d'un service</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Suivi du run SMSI (Sillage)</h4>
+          <p>Suivi des actions du Système de Management de la Sécurité de l'Information sur l'outil Sillage.</p>
+          <div class="chips"><span class="chip">SMSI</span><span class="chip">ISO 27001</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Travailler en mode projet (planifier et suivre des activités)</li>
+            <li>Évaluer les indicateurs de suivi et analyser les écarts</li>
+            <li>Contribuer à la gouvernance de la sécurité</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Analyse critique de PV de revue</h4>
+          <p>Lecture, synthèse et recommandations sur procès-verbaux de revues de processus.</p>
+          <div class="chips"><span class="chip">Audit</span><span class="chip">Gouvernance</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Évaluer les indicateurs d'un projet et analyser les écarts</li>
+            <li>Exploiter référentiels, normes et standards</li>
+            <li>Adopter un regard critique et formuler des recommandations</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Revues d'accès (M365, Keeper, Trustelem)</h4>
+          <p>Création et mise en place de revues récurrentes des comptes pour garantir la cohérence des droits.</p>
+          <div class="chips"><span class="chip">M365</span><span class="chip">Keeper</span><span class="chip">Trustelem</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Vérifier et maintenir les niveaux d'habilitation dans le temps</li>
+            <li>Préserver l'identité numérique de l'organisation</li>
+            <li>Planifier et conduire une activité récurrente de sécurité</li>
+          </ul>
+        </div>
+        <div class="real">
+          <h4>Gestion des mailing lists</h4>
+          <p>Création, ajout, suppression et nettoyage des listes de diffusion en lien avec l'annuaire.</p>
+          <div class="chips"><span class="chip">M365</span></div>
+          <div class="skills-label">Compétences développées</div>
+          <ul>
+            <li>Administrer un service de messagerie d'entreprise</li>
+            <li>Mettre à disposition un service informatique aux utilisateurs</li>
+            <li>Maintenir la cohérence entre l'annuaire et les listes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── PROJETS ───── -->
+<section id="projets">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">04 — Projets phares</span>
+      <h2>Deux projets détaillés.</h2>
+      <p class="sec-sub">Pour chacun : contexte, objectifs, démarche et compétences mobilisées.</p>
+    </div>
+
+    <div class="projet reveal">
+      <div class="projet-head">
+        <div>
+          <h3>Infrastructure sécurisée virtualisée</h3>
+          <div class="projet-kicker">Formation · 1ʳᵉ et 2ᵉ années · projet pédagogique</div>
+        </div>
+        <span class="chip">SISR</span>
+      </div>
+      <div class="projet-block">
+        <div class="lbl">Contexte</div>
+        <p>Conception et déploiement d'une infrastructure simulant un petit réseau d'entreprise : un serveur Active Directory, un serveur web Apache, un pare-feu pfSense en frontal, le tout virtualisé sous VMware.</p>
+      </div>
+      <div class="projet-block">
+        <div class="lbl">Objectifs</div>
+        <ul>
+          <li>Isoler les services derrière un pare-feu et segmenter les flux par VLAN.</li>
+          <li>Centraliser l'authentification via Active Directory et appliquer des GPO de sécurité.</li>
+          <li>Renforcer l'accès aux services critiques avec une authentification 2FA.</li>
+          <li>Documenter l'ensemble pour permettre une reprise par un tiers.</li>
+        </ul>
+      </div>
+      <div class="projet-block">
+        <div class="lbl">Démarche</div>
+        <ul>
+          <li>Maquettage sur Cisco Packet Tracer avant déploiement.</li>
+          <li>Création des VM sur VMware puis paramétrage réseau (NAT, vSwitch).</li>
+          <li>Installation et durcissement des serveurs, mise en place des règles pfSense.</li>
+          <li>Tests d'intégration puis rédaction de la documentation technique.</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <span class="chip">VMware</span><span class="chip">pfSense</span><span class="chip">Active Directory</span>
+        <span class="chip">Apache</span><span class="chip">Cisco Packet Tracer</span><span class="chip">2FA</span>
+      </div>
+    </div>
+
+    <div class="projet reveal">
+      <div class="projet-head">
+        <div>
+          <h3>Suivi du SMSI et revues d'accès</h3>
+          <div class="projet-kicker">Entreprise · 2ᵉ année · Microsoft 365 · Keeper · Trustelem</div>
+        </div>
+        <span class="chip">Sécurité</span>
+      </div>
+      <div class="projet-block">
+        <div class="lbl">Contexte</div>
+        <p>Au sein de l'équipe IT/Sécurité, contribution au suivi du Système de Management de la Sécurité de l'Information (SMSI) via l'outil Sillage et à la mise en œuvre de revues d'accès récurrentes sur les outils clés de l'entreprise.</p>
+      </div>
+      <div class="projet-block">
+        <div class="lbl">Objectifs</div>
+        <ul>
+          <li>Garantir le moindre privilège sur les comptes Microsoft 365, Keeper et Trustelem.</li>
+          <li>Tracer les évolutions des droits dans le temps pour répondre aux exigences d'audit.</li>
+          <li>Détecter les comptes inactifs, doublons ou accès non justifiés.</li>
+          <li>Alimenter le run SMSI avec des indicateurs lisibles.</li>
+        </ul>
+      </div>
+      <div class="projet-block">
+        <div class="lbl">Démarche</div>
+        <ul>
+          <li>Extraction périodique des comptes et droits depuis chaque plateforme.</li>
+          <li>Construction de la trame de revue et envoi aux responsables métier.</li>
+          <li>Consolidation des retours et application des décisions (retrait, maintien, ajustement).</li>
+          <li>Analyse critique des PV de revue et reporting dans Sillage.</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <span class="chip">Microsoft 365</span><span class="chip">Keeper</span><span class="chip">Trustelem</span>
+        <span class="chip">Sillage</span><span class="chip">ISO 27001</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── VEILLE ───── -->
+<section id="veille">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">05 — Veille technologique</span>
+      <h2>Veille technologique.</h2>
+      <p class="sec-sub">Compétence évaluée au BTS SIO. Je suis deux sujets précis : l'observabilité du noyau Linux avec eBPF, et la donnée des objets connectés de santé.</p>
+    </div>
+
+    <!-- SUJET 1 — eBPF -->
+    <div class="veille-sub flag reveal">
+      <span class="tag-mini">Sujet 1 — Infrastructure &amp; supervision</span>
+      <h3>eBPF — programmer le noyau Linux pour observer et sécuriser</h3>
+      <p><strong>eBPF (extended Berkeley Packet Filter)</strong> est une technologie intégrée au noyau Linux qui permet d'exécuter de petits programmes <strong>directement dans le noyau</strong>, sans le modifier ni charger de module. Un <strong>vérificateur</strong> contrôle chaque programme avant son chargement — pas de boucle infinie, pas d'accès mémoire interdit. C'est ce garde-fou qui rend la technique sûre en production.</p>
+
+      <div class="ebpf-fig">
+        <svg viewBox="0 0 680 232" xmlns="http://www.w3.org/2000/svg">
+          <rect x="40" y="14" width="600" height="46" rx="9" fill="#13202c" stroke="#284055"/>
+          <text x="340" y="42" text-anchor="middle" fill="#cfe6da" font-family="Public Sans,sans-serif" font-size="13" font-weight="600">Espace utilisateur — outils d'analyse&#160;: Cilium · Falco · Tetragon · bpftrace</text>
+
+          <rect x="40" y="150" width="600" height="68" rx="9" fill="#0a1f17" stroke="#1f5b41"/>
+          <text x="340" y="210" text-anchor="middle" fill="#6fae90" font-family="Public Sans,sans-serif" font-size="12.5" font-weight="600">Noyau Linux</text>
+
+          <rect x="250" y="78" width="180" height="22" rx="11" fill="#0d1620" stroke="#3a8f63"/>
+          <text x="340" y="93" text-anchor="middle" fill="#5fd39a" font-family="Public Sans,sans-serif" font-size="11" font-weight="700">VÉRIFICATEUR eBPF — sandbox sûre</text>
+
+          <g font-family="Public Sans,sans-serif" font-size="10.5" font-weight="700">
+            <!-- programmes eBPF -->
+            <g>
+              <rect x="70" y="112" width="118" height="34" rx="7" fill="#123524" stroke="#5fd39a">
+                <animate attributeName="opacity" values="1;.55;1" dur="2.4s" repeatCount="indefinite"/>
+              </rect>
+              <text x="129" y="133" text-anchor="middle" fill="#5fd39a">XDP · réseau</text>
+              <line x1="129" y1="146" x2="129" y2="150" stroke="#3a8f63" stroke-width="2"/>
+              <line x1="129" y1="112" x2="129" y2="60" stroke="#284055" stroke-width="1.5" stroke-dasharray="4 4"/>
+            </g>
+            <g>
+              <rect x="208" y="112" width="118" height="34" rx="7" fill="#123524" stroke="#5fd39a">
+                <animate attributeName="opacity" values="1;.55;1" dur="2.4s" begin="0.6s" repeatCount="indefinite"/>
+              </rect>
+              <text x="267" y="133" text-anchor="middle" fill="#5fd39a">kprobe</text>
+              <line x1="267" y1="146" x2="267" y2="150" stroke="#3a8f63" stroke-width="2"/>
+              <line x1="267" y1="112" x2="267" y2="60" stroke="#284055" stroke-width="1.5" stroke-dasharray="4 4"/>
+            </g>
+            <g>
+              <rect x="354" y="112" width="118" height="34" rx="7" fill="#123524" stroke="#5fd39a">
+                <animate attributeName="opacity" values="1;.55;1" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+              </rect>
+              <text x="413" y="133" text-anchor="middle" fill="#5fd39a">tracepoint</text>
+              <line x1="413" y1="146" x2="413" y2="150" stroke="#3a8f63" stroke-width="2"/>
+              <line x1="413" y1="112" x2="413" y2="60" stroke="#284055" stroke-width="1.5" stroke-dasharray="4 4"/>
+            </g>
+            <g>
+              <rect x="492" y="112" width="118" height="34" rx="7" fill="#123524" stroke="#5fd39a">
+                <animate attributeName="opacity" values="1;.55;1" dur="2.4s" begin="1.8s" repeatCount="indefinite"/>
+              </rect>
+              <text x="551" y="133" text-anchor="middle" fill="#5fd39a">LSM · sécurité</text>
+              <line x1="551" y1="146" x2="551" y2="150" stroke="#3a8f63" stroke-width="2"/>
+              <line x1="551" y1="112" x2="551" y2="60" stroke="#284055" stroke-width="1.5" stroke-dasharray="4 4"/>
+            </g>
+          </g>
+        </svg>
+        <div class="fig-cap">Des programmes eBPF s'attachent aux points d'ancrage du noyau et remontent l'information vers les outils, sans agent ni instrumentation du code.</div>
+      </div>
+
+      <p>Pourquoi ce sujet m'intéresse&#160;: il prolonge directement ma mission d'<strong>analyse de logs sur VM</strong>. Les outils classiques de supervision lisent <code>/proc</code> et parsent des fichiers&#160;; ils ne voient que ce que le système veut bien exposer. eBPF observe les appels système, les paquets réseau et les comportements suspects <strong>en temps réel, au cœur du noyau</strong>.</p>
+      <p>En 2025-2026, eBPF est devenu un pilier des infrastructures modernes, utilisé en production par Meta, Google, Netflix ou Cloudflare. C'est passé d'un outil de niche pour développeurs noyau à une fondation pour toute une génération d'outils de sécurité et d'observabilité.</p>
+
+      <div class="mini-grid">
+        <div class="mini"><b>Cilium</b><span>Réseau haute performance pour Kubernetes — remplace iptables/kube-proxy, avec Hubble pour la visibilité des flux.</span></div>
+        <div class="mini"><b>Falco</b><span>Détection d'intrusion à l'exécution — repère un comportement malveillant en temps réel.</span></div>
+        <div class="mini"><b>Tetragon</b><span>Observabilité sécurité + blocage&#160;: applique des politiques via les hooks LSM du noyau.</span></div>
+        <div class="mini"><b>bpftrace</b><span>Traçage et diagnostic fin du noyau — le couteau suisse de l'analyse système.</span></div>
+      </div>
+
+      <div class="competence-note">Compétences reliées&#160;: superviser une solution d'infrastructure · exploiter et dépanner · assurer la cybersécurité d'une infrastructure réseau.</div>
+    </div>
+
+    <!-- SUJET 2 — WHOOP -->
+    <div class="veille-sub flag reveal">
+      <span class="tag-mini">Sujet 2 — Objets connectés &amp; donnée personnelle</span>
+      <h3>La montre WHOOP — anatomie d'un objet connecté de santé</h3>
+      <p>Je porte un bracelet connecté <strong>WHOOP</strong>&#160;: au-delà du sport, c'est un excellent cas d'étude technique. Contrairement aux montres classiques, WHOOP n'a <strong>pas d'écran</strong> — toutes les données passent par l'application. L'appareil fonctionne sur un <strong>modèle d'abonnement</strong> (environ 30&#160;€/mois) — le capteur est fourni avec l'abonnement, et sans abonnement actif il ne collecte ni n'affiche rien.</p>
+
+      <figure class="whoop-photo">
+        <img src="https://cdn.mos.cms.futurecdn.net/h4yT6FtE5UkbUfHtrBqf3A-1200-80.jpg"
+             alt="Bracelet connecté WHOOP 5.0 porté au poignet"
+             loading="lazy"
+             onerror="var n=+(this.dataset.t||0)+1;this.dataset.t=n;if(n===1){this.src='whoop.jpg';}else{this.style.display='none';this.parentNode.querySelector('.photo-ph').style.display='flex';}">
+        <div class="photo-ph">Photo du bracelet WHOOP&#160;: déposez un fichier nommé <b>whoop.jpg</b> dans le dossier du portfolio pour l'afficher ici.</div>
+        <figcaption class="whoop-photo-info">
+          <span class="lblp">WHOOP 5.0 / MG · 2025</span>
+          <h4>Le bracelet et ses options</h4>
+          <ul>
+            <li>Sans écran — toutes les données dans l'application</li>
+            <li>Capteur enrichi&#160;: 26 mesures par seconde</li>
+            <li>Autonomie ~14 jours · recharge sans contact (Powerpack)</li>
+            <li>ECG à la demande &amp; tension artérielle (modèle MG)</li>
+            <li>Étanche 10&#160;m · bracelets SuperKnit interchangeables</li>
+            <li>3 formules d'abonnement (One · Peak · Life)</li>
+          </ul>
+        </figcaption>
+      </figure>
+
+      <div class="whoop-show">
+        <div>
+          <svg viewBox="0 0 220 210" xmlns="http://www.w3.org/2000/svg" aria-label="Capteur optique WHOOP">
+            <defs>
+              <radialGradient id="pod" cx="40%" cy="35%" r="75%">
+                <stop offset="0%" stop-color="#1c2c22"/><stop offset="100%" stop-color="#0a120d"/>
+              </radialGradient>
+            </defs>
+            <circle cx="110" cy="105" r="44" fill="none" stroke="#5fd39a" stroke-width="2">
+              <animate attributeName="r" values="44;92" dur="2.8s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.55;0" dur="2.8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="110" cy="105" r="44" fill="none" stroke="#5fd39a" stroke-width="2">
+              <animate attributeName="r" values="44;92" dur="2.8s" begin="1.4s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.55;0" dur="2.8s" begin="1.4s" repeatCount="indefinite"/>
+            </circle>
+            <rect x="56" y="51" width="108" height="108" rx="26" fill="url(#pod)" stroke="#2c4636" stroke-width="2"/>
+            <circle cx="88" cy="83" r="9" fill="#5fd39a"><animate attributeName="opacity" values="1;.3;1" dur="1.3s" repeatCount="indefinite"/></circle>
+            <circle cx="132" cy="83" r="9" fill="#5fd39a"><animate attributeName="opacity" values=".3;1;.3" dur="1.3s" repeatCount="indefinite"/></circle>
+            <circle cx="88" cy="127" r="9" fill="#46c2ff"><animate attributeName="opacity" values=".4;1;.4" dur="1.7s" repeatCount="indefinite"/></circle>
+            <circle cx="132" cy="127" r="9" fill="#46c2ff"><animate attributeName="opacity" values="1;.4;1" dur="1.7s" repeatCount="indefinite"/></circle>
+            <circle cx="110" cy="105" r="6.5" fill="#fff" opacity="0.9"/>
+          </svg>
+        </div>
+        <div>
+          <span class="lbl-w">Capteur optique</span>
+          <h4>Des dizaines de mesures par seconde</h4>
+          <p>Le bracelet enregistre en continu&#160;: fréquence cardiaque, variabilité de la fréquence cardiaque (HRV), sommeil, fréquence respiratoire, température cutanée et oxygénation du sang.</p>
+          <div class="wave-box">
+            <svg viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-label="Fréquence cardiaque">
+              <g transform="translate(0,0)">
+                <animateTransform attributeName="transform" type="translate" from="0 0" to="-160 0" dur="1.05s" repeatCount="indefinite"/>
+                <polyline points="0,40 52,40 59,44 65,40 71,11 79,69 87,40 95,46 103,40 160,40 160,40 212,40 219,44 225,40 231,11 239,69 247,40 255,46 263,40 320,40 320,40 372,40 379,44 385,40 391,11 399,69 407,40 415,46 423,40 480,40 480,40 532,40 539,44 545,40 551,11 559,69 567,40 575,46 583,40 640,40 640,40 692,40 699,44 705,40 711,11 719,69 727,40 735,46 743,40 800,40 800,40 852,40 859,44 865,40 871,11 879,69 887,40 895,46 903,40 960,40 960,40 1012,40 1019,44 1025,40 1031,11 1039,69 1047,40 1055,46 1063,40 1120,40" fill="none" stroke="#5fd39a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <p>Trois scores synthétisent toutes ces mesures. La HRV, mesurée pendant le sommeil profond, est l'indicateur le plus fiable de la récupération.</p>
+
+      <div class="gauges">
+        <div class="gauge" data-pct="86" data-target="86" data-suffix="%" data-color="#2f9e63">
+          <div class="ring-wrap">
+            <svg viewBox="0 0 128 128">
+              <circle cx="64" cy="64" r="50" fill="none" stroke="#e6e0cf" stroke-width="11"/>
+              <circle class="gauge-ring" cx="64" cy="64" r="50" fill="none" stroke="#2f9e63" stroke-width="11"
+                stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="314.16"
+                transform="rotate(-90 64 64)"/>
+            </svg>
+            <div class="gauge-val">0%</div>
+          </div>
+          <div class="gauge-name">Récupération</div>
+          <div class="gauge-desc">Le corps est-il prêt à l'effort&#160;?</div>
+        </div>
+        <div class="gauge" data-pct="92" data-target="92" data-suffix="%" data-color="#2f78b0">
+          <div class="ring-wrap">
+            <svg viewBox="0 0 128 128">
+              <circle cx="64" cy="64" r="50" fill="none" stroke="#e6e0cf" stroke-width="11"/>
+              <circle class="gauge-ring" cx="64" cy="64" r="50" fill="none" stroke="#2f78b0" stroke-width="11"
+                stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="314.16"
+                transform="rotate(-90 64 64)"/>
+            </svg>
+            <div class="gauge-val">0%</div>
+          </div>
+          <div class="gauge-name">Sommeil</div>
+          <div class="gauge-desc">Qualité et phases de la nuit.</div>
+        </div>
+        <div class="gauge" data-pct="68" data-target="14.2" data-suffix="" data-color="#c4892f">
+          <div class="ring-wrap">
+            <svg viewBox="0 0 128 128">
+              <circle cx="64" cy="64" r="50" fill="none" stroke="#e6e0cf" stroke-width="11"/>
+              <circle class="gauge-ring" cx="64" cy="64" r="50" fill="none" stroke="#c4892f" stroke-width="11"
+                stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="314.16"
+                transform="rotate(-90 64 64)"/>
+            </svg>
+            <div class="gauge-val">0</div>
+          </div>
+          <div class="gauge-name">Charge (Strain)</div>
+          <div class="gauge-desc">Intensité de l'effort, sur 21.</div>
+        </div>
+      </div>
+
+      <div class="wdetails">
+        <div class="wd"><b>WHOOP 5.0 &amp; WHOOP MG</b> — dernières générations (2025), tournées santé et longévité.</div>
+        <div class="wd"><b>Étanche à 10&#160;m</b> — porté en continu, y compris natation et sommeil.</div>
+        <div class="wd"><b>Advanced Labs</b> — croise analyses sanguines et données du bracelet.</div>
+        <div class="wd"><b>Partenaire Scuderia Ferrari</b> — fournisseur santé de l'écurie en F1, saison 2026.</div>
+      </div>
+
+      <div class="chain">
+        <h4>Ce qui m'intéresse en SISR&#160;: la chaîne de la donnée</h4>
+        <p class="sec-sub" style="font-size:14px">Un objet connecté n'est jamais « que » du matériel. C'est une chaîne complète à sécuriser de bout en bout.</p>
+        <svg viewBox="0 0 700 150" xmlns="http://www.w3.org/2000/svg">
+          <line x1="80" y1="58" x2="620" y2="58" stroke="#d8d0bd" stroke-width="3"/>
+          <line x1="80" y1="58" x2="620" y2="58" stroke="#1f4d68" stroke-width="3" stroke-dasharray="6 10" stroke-linecap="round">
+            <animate attributeName="stroke-dashoffset" values="0;-160" dur="2.4s" repeatCount="indefinite"/>
+          </line>
+          <circle r="6" fill="#1f4d68">
+            <animateMotion dur="4s" repeatCount="indefinite" path="M80 58 L620 58"/>
+          </circle>
+          <g font-family="Public Sans,sans-serif">
+            <circle cx="80" cy="58" r="24" fill="#1f4d68"/>
+            <text x="80" y="63" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">1</text>
+            <text x="80" y="104" text-anchor="middle" fill="#1f1e1b" font-size="12.5" font-weight="700">Capteur</text>
+            <text x="80" y="122" text-anchor="middle" fill="#86827a" font-size="11">mesures biométriques</text>
+
+            <circle cx="267" cy="58" r="24" fill="#1f4d68"/>
+            <text x="267" y="63" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">2</text>
+            <text x="267" y="104" text-anchor="middle" fill="#1f1e1b" font-size="12.5" font-weight="700">Application</text>
+            <text x="267" y="122" text-anchor="middle" fill="#86827a" font-size="11">smartphone</text>
+
+            <circle cx="453" cy="58" r="24" fill="#1f4d68"/>
+            <text x="453" y="63" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">3</text>
+            <text x="453" y="104" text-anchor="middle" fill="#1f1e1b" font-size="12.5" font-weight="700">Cloud WHOOP</text>
+            <text x="453" y="122" text-anchor="middle" fill="#86827a" font-size="11">stockage &amp; analyse</text>
+
+            <circle cx="620" cy="58" r="24" fill="#a9762f"/>
+            <text x="620" y="63" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">4</text>
+            <text x="620" y="104" text-anchor="middle" fill="#a9762f" font-size="12.5" font-weight="700">Tiers&#160;?</text>
+            <text x="620" y="122" text-anchor="middle" fill="#86827a" font-size="11">analytics, partenaires</text>
+          </g>
+        </svg>
+      </div>
+
+      <p>Les mesures collectées sont des <strong>données de santé « sensibles »</strong> au sens du RGPD. L'actualité récente montre la fragilité du modèle&#160;: une action collective déposée aux États-Unis en 2025 reproche à WHOOP d'avoir partagé des données de santé avec un service tiers d'analyse, et une étude universitaire a classé la marque parmi les fabricants de wearables les plus exposés sur le plan de la vie privée. WHOOP affirme de son côté ne jamais vendre les données personnelles et aligner ses pratiques sur le RGPD et le CCPA.</p>
+      <p>Ce que j'en retiens&#160;: sécuriser un objet connecté, c'est sécuriser <strong>toute la chaîne</strong> — capteur, application, transport, cloud et accès des tiers — et l'encadrer juridiquement. C'est exactement la logique du bloc <em>cybersécurité</em> du BTS SIO.</p>
+      <div class="competence-note">Compétences reliées&#160;: protéger les données à caractère personnel · sécuriser les équipements et les usages · préserver l'identité numérique de l'organisation.</div>
+    </div>
+
+    <!-- METHODE + SOURCES -->
+    <div class="veille-cols reveal">
+      <div class="panel">
+        <h4>Ma méthode de veille en 5 étapes</h4>
+        <ol>
+          <li>Collecter&#160;: agrégation automatique via flux RSS (Feedly) et alertes Google.</li>
+          <li>Filtrer&#160;: tri selon la fiabilité de la source et la pertinence métier.</li>
+          <li>Analyser&#160;: compréhension technique et impact pour l'entreprise.</li>
+          <li>Synthétiser&#160;: fiche courte, reformulée avec mes propres mots, dans Notion.</li>
+          <li>Diffuser&#160;: partage en équipe ou réutilisation en oral d'examen.</li>
+        </ol>
+      </div>
+      <div class="panel">
+        <h4>Mes sources</h4>
+        <ul class="src">
+          <li><span>CERT-FR</span><span class="src-type">ALERTES</span></li>
+          <li><span>ANSSI</span><span class="src-type">GOUV</span></li>
+          <li><span>CNIL</span><span class="src-type">RGPD</span></li>
+          <li><span>The Hacker News</span><span class="src-type">CYBER</span></li>
+          <li><span>IT-Connect</span><span class="src-type">TUTOS</span></li>
+          <li><span>Le Monde Informatique</span><span class="src-type">NEWS</span></li>
+          <li><span>Documentation Cilium &amp; CNCF</span><span class="src-type">PROJET</span></li>
+          <li><span>Feedly · Google Alertes</span><span class="src-type">OUTILS</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── ÉPREUVES ───── -->
+<section id="epreuves">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">06 — Épreuves</span>
+      <h2>Les épreuves du BTS SIO.</h2>
+      <p class="sec-sub">Vue d'ensemble des épreuves de la session 2026 que ce portfolio vient soutenir.</p>
+    </div>
+
+    <div class="epreuves reveal">
+      <div class="epreuve">
+        <div class="epreuve-code">E4 · U4SR</div>
+        <h4>Support et mise à disposition de services informatiques</h4>
+        <div class="epreuve-info"><strong>Format :</strong> oral 40 min (exposé + entretien)</div>
+        <div class="epreuve-info"><strong>Support :</strong> portfolio + fiches de situations</div>
+        <div class="epreuve-info"><strong>Objectif :</strong> évaluer le bloc 1 (commun)</div>
+        <span class="coef">Coefficient 4</span>
+      </div>
+      <div class="epreuve">
+        <div class="epreuve-code">E5 · U5SR</div>
+        <h4>Administration des systèmes et des réseaux</h4>
+        <div class="epreuve-info"><strong>Format :</strong> CCF · exposé 10 min + entretien 10 min</div>
+        <div class="epreuve-info"><strong>Support :</strong> 2 réalisations + fiche d'engagement</div>
+        <div class="epreuve-info"><strong>Objectif :</strong> évaluer le bloc 2 (SISR)</div>
+        <span class="coef">Coefficient 4</span>
+      </div>
+      <div class="epreuve">
+        <div class="epreuve-code">E6 · U6</div>
+        <h4>Cybersécurité des services informatiques</h4>
+        <div class="epreuve-info"><strong>Format :</strong> écrit 4 h</div>
+        <div class="epreuve-info"><strong>Support :</strong> étude de cas spécifique SISR</div>
+        <div class="epreuve-info"><strong>Objectif :</strong> évaluer le bloc 3 (commun)</div>
+        <span class="coef">Coefficient 4</span>
+      </div>
+    </div>
+
+    <!-- TABLEAU DE SYNTHÈSE - AFFICHÉ DIRECTEMENT -->
+    <div class="pdf-wrap reveal">
+      <div class="pdf-head">
+        <span class="tag-mini">Tableau de synthèse</span>
+        <h3>Tableau de synthèse des réalisations professionnelles</h3>
+        <p>Document officiel remis au jury. Il est affiché ci-dessous, directement consultable sans téléchargement.</p>
+      </div>
+      <div class="pdf-frame">
+        <object data="tabdecomp.pdf#view=FitH&toolbar=1" type="application/pdf">
+          <iframe src="tabdecomp.pdf#view=FitH&toolbar=1" title="Tableau de synthèse des compétences"></iframe>
+        </object>
+      </div>
+      <div class="pdf-foot">
+        <span>Le document s'affiche directement dans la page. Si l'aperçu ne se charge pas sur votre navigateur, utilisez le bouton ci-contre.</span>
+        <a class="btn-open" href="tabdecomp.pdf" target="_blank" rel="noopener">Ouvrir en plein écran</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 · Chahé Papazian · Portfolio BTS SIO option SISR — session 2026</p>
+</footer>
+
+<script>
+  // Onglets réalisations
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.tab-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Apparition au défilement
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Jauges WHOOP — animation au defilement
+  document.querySelectorAll('.gauge').forEach(g => {
+    const C = 314.16;
+    const ring = g.querySelector('.gauge-ring');
+    const valEl = g.querySelector('.gauge-val');
+    const pct = parseFloat(g.dataset.pct);
+    const target = parseFloat(g.dataset.target);
+    const suffix = g.dataset.suffix || '';
+    const decimals = (g.dataset.target.indexOf('.') > -1) ? 1 : 0;
+    const gio = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        ring.style.strokeDashoffset = C * (1 - pct / 100);
+        const t0 = performance.now(), dur = 1400;
+        const step = (t) => {
+          const k = Math.min(1, (t - t0) / dur);
+          const v = target * (1 - Math.pow(1 - k, 3));
+          valEl.textContent = v.toFixed(decimals) + suffix;
+          if (k < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+        gio.unobserve(en.target);
+      });
+    }, { threshold: 0.4 });
+    gio.observe(g);
+  });
+</script>
+
+</body>
+</html>
